@@ -1,0 +1,33 @@
+const database = 'autos';
+// Create a new database.
+use('autos');
+
+// Clears any schema from collection, before run createColleciton
+db.cars.drop()
+
+// Create collection based on cars example
+db.createCollection('cars', {
+    validator: {
+        $jsonSchema: {
+            bsonType: "object",
+            required: ["model", "year", "madeBy"],
+            properties: {
+                model: {
+                    bsonType: "string",
+                    description: "Este campo deve conter uma string e possuir o modelo do carro"
+                },
+                year: {
+                    bsonType: "number",
+                    minimum: 1940,
+                    maximum: 2025,
+                    description: "Este campo deve conter um inteiro e o ano de fabricação"
+                },
+                madeBy: {
+                    bsonType: "string",
+                    minLength: 3, 
+                    description: "Este campo deve conter uma string e o nome da montadora do veiculo"
+                }
+            }
+        }
+    }
+});

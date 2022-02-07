@@ -1,0 +1,16 @@
+// MongoDB Playground
+// Use Ctrl+Space inside a snippet or a string literal to trigger completions.
+
+const database = 'autos';
+
+// Create a new database.
+use('autos');
+
+db.cars.insertOne({
+  model: 'Mustang',
+  year: NumberInt(1970),
+  madeBy: 'Ford',
+  avaliable: true
+})
+
+db.cars.find()

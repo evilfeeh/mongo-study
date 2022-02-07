@@ -1,0 +1,20 @@
+[
+  {
+    "_id": {
+      "$oid": "62016bc98327c423c4160c5e"
+    },
+    "model": "Fusca",
+    "year": 1980,
+    "madeBy": "Ford",
+    "avaliable": true
+  },
+  {
+    "_id": {
+      "$oid": "62016bff79ae9f573ed0652f"
+    },
+    "model": "Mustang",
+    "year": 1970,
+    "madeBy": "Ford",
+    "avaliable": true
+  }
+]
