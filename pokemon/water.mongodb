@@ -1,0 +1,13 @@
+use('ginasio')
+
+db.pokemon.find({
+    types: {
+        $in: ["Water"]
+    }
+}, 
+{
+    _id: 0,
+    name:1,
+    hp:1,
+    generation:1
+})

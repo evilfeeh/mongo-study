@@ -1,0 +1,7 @@
+use('ginasio')
+// search only to pokemons that have 2 types
+db.pokemon.find({
+    types: {
+        $size: 2
+    }
+})

@@ -1,0 +1,3 @@
+use('ginasio')
+// this find is only to se the pokemon data structure
+db.pokemon.findOne()

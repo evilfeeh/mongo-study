@@ -1,0 +1,10 @@
+use('ginasio');
+
+db.pokemon.find({
+    attack: {
+        $gt: 90
+    },
+    defense: {
+        $gt: 90
+    }
+})
