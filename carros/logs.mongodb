@@ -1,0 +1,7 @@
+use('autos');
+db.logs.insertOne({
+    model: "Mercedez",
+    sold: false,
+    buyer: "Antonia Nogueira"
+})
+db.logs.find()

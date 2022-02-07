@@ -1,0 +1,11 @@
+const database = 'autos';
+use('autos');
+
+db.logs.drop()
+// capped keeps the collection with a quantity of documents
+// most uselly used to logss
+db.createCollection('logs', {
+    capped: true,
+    size: 2048,
+    max: 5
+})

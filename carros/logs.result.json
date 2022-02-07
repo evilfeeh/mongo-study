@@ -1,0 +1,42 @@
+[
+    {
+      "_id": {
+        "$oid": "62016ecd09b7adb40e873cc4"
+      },
+      "model": "Camaro",
+      "sold": true,
+      "buyer": "Felipe Santos"
+    },
+    {
+      "_id": {
+        "$oid": "62016ede170e9deaf6b55629"
+      },
+      "model": "Fusca",
+      "sold": true,
+      "buyer": "Daniel Santos"
+    },
+    {
+      "_id": {
+        "$oid": "62016ef8c2607c9ecb764790"
+      },
+      "model": "Onix",
+      "sold": false,
+      "buyer": "Daniel Santos"
+    },
+    {
+      "_id": {
+        "$oid": "62016f1280d7a171817154f9"
+      },
+      "model": "Punto",
+      "sold": false,
+      "buyer": "Antonia Nogueira"
+    },
+    {
+      "_id": {
+        "$oid": "62016f2595e507e57c49c31b"
+      },
+      "model": "Mercedez",
+      "sold": false,
+      "buyer": "Antonia Nogueira"
+    }
+  ]
