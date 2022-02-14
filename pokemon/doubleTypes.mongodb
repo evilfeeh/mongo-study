@@ -1,7 +1,18 @@
 use('ginasio')
 // search only to pokemons that have 2 types
+// db.pokemon.find({
+//     types: {
+//         $size: 2
+//     }
+// })
+
+// db.pokemon.find({
+//     types: { $all: ['Flying', 'Rock'] }
+// })
+
 db.pokemon.find({
-    types: {
-        $size: 2
-    }
+    $and: [
+        { types: 'Flying' },
+        { legendary: true }
+    ]
 })
