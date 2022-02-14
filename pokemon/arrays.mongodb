@@ -1,0 +1,173 @@
+use('ginasio')
+// search only to pokemons that have 2 types
+// db.pokemon.find({types: /fire/i})
+// db.pokemon.find({types: /fire/i}, {types: true, _id:false, name:true})
+// db.pokemon.find({
+//     types: {
+//         $nin: ["Fire"]
+//     }
+// }, {
+//     types: true,
+//     _id:false,
+//     name:true
+// })
+
+//example with ignore case
+// db.pokemon.find({
+//     types: {
+//         $in: [/grass/i]
+//     }
+// }, {
+//     types: true,
+//     _id:false,
+//     name:true
+// })
+
+// db.pokemon.updateOne({
+//     name: "Evilfeeh New",
+//     types: "Flying"
+// },
+// {
+//     $set: {
+//         name: "Evilfeeh Two",
+//         "types.$": "developer"
+//     }
+// })
+
+// db.pokemon.updateOne({
+//     name: "Evilfeeh Two"
+// },
+// {
+//     $set: {
+//         "types.$[]": "Streamer"
+//     }
+// })
+
+// db.pokemon.updateOne({
+//     name: "Evilfeeh Two"
+// },
+// {
+//     $push: {
+//         types: {
+//             $each: ['Gamer', 'Developer', 'Podcaster', 'Tatuado']
+//         }
+//     }
+// })
+
+// db.pokemon.updateOne({
+//     name: "Evilfeeh Two"
+// },
+// {
+//     $addToSet: {
+//         types: "Estudioso"
+//     }
+// })
+
+// db.pokemon.updateOne({
+//     name: "Evilfeeh Two"
+// },
+// {
+//     $addToSet: {
+//         types: "Tatuado"
+//     }
+// })
+
+// db.pokemon.updateOne({
+//     name: "Evilfeeh Two"
+// },
+// {
+//     $push: {
+//         types: {
+//             $each: [],
+//             $sort: 1
+//         }
+//     }
+// })
+
+// db.pokemon.updateOne({
+//     name: "Evilfeeh Two"
+// },
+// {
+//     $push: {
+//         types: {
+//             $each: [],
+//             $slice: -1
+//         }
+//     }
+// })
+
+// db.pokemon.updateOne({
+//     name: "Evilfeeh Two"
+// },
+// {
+//     $pop: {
+//         types: -1
+//     }
+// })
+
+// db.pokemon.updateOne({
+//     name: "Evilfeeh Two"
+// },
+// {
+//     $pull: {
+//         types: {
+//             $in: ["Streamer", 'Developer']
+//         }
+//     }
+// })
+
+// db.pokemon.updateOne({
+//     name: "Evilfeeh Two"
+// },
+// {
+//     $pullAll: {
+//         types: ['Gamer', 'Podcaster']
+//     }
+// })
+
+// db.pokemon.updateOne({
+//     name: "Evilfeeh Two"
+// },
+// {
+//     $set: {
+//         types: [
+//             {name: 'Scissors', strong: 'paper', weakeness: 'rock'},
+//             {name: 'Paper', strong: 'rock', weakeness: 'scissors'},
+//             {name: 'Rock', strong: 'scissors', weakeness: 'paper'},
+//             {name: 'Lizzard', strong: 'Spock', weakeness: 'rock'}, 
+//             {name: 'Spock', strong: 'scissors', weakeness: 'Lizzard'}   
+//         ]
+//     }
+// })
+
+// db.pokemon.updateOne({
+//     name: "Evilfeeh Two",
+//     "types.strong": 'rock'
+// },
+// {
+//     $set: {
+//         "types.$.strong": "Rock" 
+//     }
+// })
+
+db.pokemon.updateOne({
+    name: "Evilfeeh Two"
+},
+{
+    $push: {
+        types: {
+            $each: [],
+            $sort: {name: 1}
+        } 
+    }
+})
+
+
+db.pokemon.find({
+    name: /Evilfeeh Two/
+},
+{
+    types: true,
+    _id:false,
+    name:true
+})
