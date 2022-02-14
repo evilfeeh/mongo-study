@@ -1,0 +1,38 @@
+use('ginasio')
+
+// db.pokemon.find({
+//     name: /^Char/
+// })
+
+// db.pokemon.updateOne({
+//     _id: 7
+// },
+// {   
+//     $set: {
+//         "battle_points": {
+//                 "hp": 78,
+//                 "attack": 84,
+//                 "defense": 78,
+//                 "speed": 100
+//         }
+//     },
+//     $unset: {
+//             "hp": 78,
+//             "attack": 84,
+//             "defense": 78,
+//             "speed": 100
+//     }
+// }, {
+//     upsert: true
+// })
+
+// db.pokemon.find({
+//     battle_points: { $exists: true }
+// })
+
+db.pokemon.find({
+    "battle_points.hp": {$exists: true}
+},
+{
+    _id: false, name: true, battle_points: true
+})
