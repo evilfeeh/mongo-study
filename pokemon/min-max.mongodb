@@ -1,0 +1,17 @@
+use('ginasio')
+
+db.pokemon.updateMany({
+    types: 'Fire'
+},
+{
+    $unset: {
+        updateAt: ""
+    },
+    $currentDate: {
+        updatedAt: true
+    }
+})
+
+db.pokemon.find({
+    types: /Fire/
+})
