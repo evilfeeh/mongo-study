@@ -1,0 +1,36 @@
+use('ginasio')
+
+db.pokemon.find({
+    name: /^bulb/i
+})
+
+// db.pokemon.updateOne({
+//     _id: 1
+// },
+// {   
+//     $inc: {
+//         "attack": 10
+//     }
+// })
+
+// db.pokemon.updateOne({
+//     _id: 1
+// },
+// {   
+//     $inc: {
+//         "attack": -49
+//     }
+// })
+
+db.pokemon.updateOne({
+    _id: 1
+},
+{   
+    $mul: {
+        "attack": 2
+    }
+})
+
+db.pokemon.find({
+    name: 'Bulbasaur'
+})
