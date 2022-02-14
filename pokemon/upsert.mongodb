@@ -1,0 +1,26 @@
+use('ginasio')
+
+db.pokemon.updateMany(
+    {
+        name: "Evilfeeh New"
+    },
+    {
+        $set: {
+            hp: 300,
+            attack: 600,
+            defense: 400,
+            beauty: 999
+        },
+        $setOnInsert: {
+            types: ['Fire', 'Flying'],
+            legendary: true
+        }
+    },
+    {
+        upsert: true
+    }
+)
+
+db.pokemon.find({
+    name: /Evilfeeh/
+})
