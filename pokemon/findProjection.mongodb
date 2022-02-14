@@ -1,0 +1,6 @@
+use('ginasio')
+// the find is to use regex and projection
+
+//db.pokemon.find({name: /^Pik/}, {name:1, types: 1})
+// db.pokemon.find({name: /^pik/i}, {name: 1, types: 1})
+db.pokemon.find({name: /^pi/i}, {name: 1, _id: 0})
