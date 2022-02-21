@@ -1,0 +1,7 @@
+use('ginasio')
+
+db.pokemon.createIndex({name: 1})
+
+db.pokemon.createIndex({attack: 1}, {name: "idx_attack"})
+
+db.pokemon.getIndexes()
