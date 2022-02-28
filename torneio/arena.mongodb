@@ -1,0 +1,46 @@
+use('ginasio')
+
+db.arena.aggregate([
+  {
+    $lookup: {
+      from: "pokemon",
+      localField: "First_pokemon",
+      foreignField: "_id",
+      as: "fighter"
+    }
+  },
+  {
+    $lookup: {
+      from: "pokemon",
+      localField: "Second_pokemon",
+      foreignField: "_id",
+      as: "challenger"
+    }
+  },
+  {
+    $project: {
+      _id: 0,
+      Winner: 1,
+      fighter: {
+        $arrayElemAt: ["$fighter", 0]
+      },
+      challenger: {
+        $arrayElemAt: ["$challenger", 0]
+      }
+    }
+  },
+  {
+    $project: {
+      First_pokemon: "$fighter.name",
+      Second_pokemon: "$challenger.name",
+      winner: {
+        $cond: {
+          if: {$eq: ["Winner", "$fighter._id"]},
+          then: "$fighter.name",
+          else: "$challenger.name"
+        }
+      }
+    }
+  }
+])
+
